@@ -1,0 +1,44 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-the-provided-dawateiqra-organization-logo-to-the-app-as-a-static-asset-and-apply-it-to-the-app-branding-show-it-in-the-top-navigation-next-to-the-app-name-and-set-it-as-the-favicon-and-any-other-standard-web-app-icons-used-by-the-frontend-update-the-app-title-text-to-reflect-the-dawateiqra-organization-branding",
+      "featureTitle": "Add the provided Dawateiqra Organization logo to the app as a static asset and apply it to the app branding: show it in the top navigation next to the app name, and set it as the favicon (and any other standard web app icons used by the frontend). Update the app title text to reflect the Dawateiqra Organization branding.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/components/TopNav.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-the-existing-internet-identity-login-flow-more-robust-and-retry-friendly-if-login-fails-or-gets-stuck-provide-clear-user-feedback-in-english-and-allow-the-user-to-retry-login-without-needing-a-page-refresh",
+      "featureTitle": "Make the existing Internet Identity login flow more robust and retry-friendly: if login fails or gets stuck, provide clear user feedback in English and allow the user to retry login without needing a page refresh.",
+      "files": [
+        "frontend/src/components/AuthButton.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

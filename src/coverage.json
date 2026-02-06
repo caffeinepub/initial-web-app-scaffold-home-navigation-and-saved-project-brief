@@ -1,0 +1,62 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-06T23:09:50.029Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-5",
+        "summary": "Add the provided Dawateiqra Organization logo to the app as a static asset and apply it to the app branding: show it in the top navigation next to the app name, and set it as the favicon (and any other standard web app icons used by the frontend). Update the app title text to reflect the Dawateiqra Organization branding.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/dawateiqra-logo.dim_512x512.png",
+          "frontend/public/assets/generated/favicon.dim_32x32.png",
+          "frontend/public/assets/generated/nav-logo.dim_48x48.png",
+          "frontend/index.html",
+          "frontend/src/components/TopNav.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/dawateiqra-logo.dim_512x512.png",
+          "frontend/public/assets/generated/favicon.dim_32x32.png",
+          "frontend/public/assets/generated/nav-logo.dim_48x48.png",
+          "frontend/index.html",
+          "frontend/src/components/TopNav.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Make the existing Internet Identity login flow more robust and retry-friendly: if login fails or gets stuck, provide clear user feedback in English and allow the user to retry login without needing a page refresh.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/AuthButton.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/AuthButton.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.html",
+    "frontend/public/assets/generated/dawateiqra-logo.dim_512x512.png",
+    "frontend/public/assets/generated/favicon.dim_32x32.png",
+    "frontend/public/assets/generated/nav-logo.dim_48x48.png",
+    "frontend/src/components/AuthButton.tsx",
+    "frontend/src/components/TopNav.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

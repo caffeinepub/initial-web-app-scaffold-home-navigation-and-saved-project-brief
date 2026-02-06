@@ -1,0 +1,61 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Dawateiqra branding + retry-friendly Internet Identity login",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "summary": "Add Dawateiqra Organization logo branding (top nav + favicon/icons) and update app title.",
+      "acceptanceCriteria": [
+        "The uploaded logo is processed into square icon assets and stored under frontend/public/assets/generated.",
+        "Top navigation shows the logo image next to the app name (replacing the current 'ProjectBrief' text-only brand).",
+        "The browser tab favicon uses the generated icon asset(s).",
+        "The HTML document title is updated to a Dawateiqra Organization title (English)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/dawateiqra-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add generated centered square app logo (512x512) created from 20251231_075037.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/favicon.dim_32x32.png",
+          "operation": "create",
+          "description": "Add generated favicon icon (32x32) created from 20251231_075037.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/nav-logo.dim_48x48.png",
+          "operation": "create",
+          "description": "Add generated navigation bar logo (48x48) created from 20251231_075037.png."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the HTML document title to Dawateiqra Organization branding (English) and wire standard icon tags to use frontend/public/assets/generated/favicon.dim_32x32.png and frontend/public/assets/generated/dawateiqra-logo.dim_512x512.png (e.g., favicon + apple-touch-icon/other common icons as applicable)."
+        },
+        {
+          "path": "frontend/src/components/TopNav.tsx",
+          "operation": "modify",
+          "description": "Replace the text-only brand in the top navigation with a logo + brand text: render frontend/public/assets/generated/nav-logo.dim_48x48.png next to an updated app name reflecting Dawateiqra Organization branding (English). Ensure the logo is present in both desktop and mobile nav contexts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Make Internet Identity login failure states clear and retryable from the UI without refresh.",
+      "acceptanceCriteria": [
+        "If Internet Identity login returns an error (loginStatus === 'loginError' with loginError present), the UI displays a clear error message in English and presents an obvious 'Try again' action.",
+        "If a previous login attempt left the app in a bad state (e.g., 'User is already authenticated' error), the retry flow clears the stored identity and retries login from the UI.",
+        "Login button labels remain English and do not break existing authenticated/un-authenticated states.",
+        "No new third-party authentication providers are added."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AuthButton.tsx",
+          "operation": "modify",
+          "description": "Enhance the existing Internet Identity AuthButton retry UX without modifying immutable hooks: (1) consume loginStatus/isLoginError/loginError from useInternetIdentity and show a clear English error message when loginStatus is 'loginError'; (2) provide a prominent 'Try again' action that clears identity (clear()), clears cached queries (queryClient.clear()), and then re-initiates login; (3) handle the 'User is already authenticated' stuck-state by clearing then retrying from the UI; (4) keep all labels English and preserve correct authenticated vs unauthenticated behavior; (5) do not add any alternative auth providers."
+        }
+      ]
+    }
+  ]
+}

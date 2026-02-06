@@ -1,0 +1,74 @@
+{
+  "kind": "build_request",
+  "title": "Set Dawateiqra logo branding and make login retryable",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "text": "Add the provided Dawateiqra Organization logo to the app as a static asset and apply it to the app branding: show it in the top navigation next to the app name, and set it as the favicon (and any other standard web app icons used by the frontend). Update the app title text to reflect the Dawateiqra Organization branding.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "App ka logo bheja hu wah set kar dijiye ga"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The uploaded logo is processed into square icon assets and stored under frontend/public/assets/generated.",
+        "Top navigation shows the logo image next to the app name (replacing the current 'ProjectBrief' text-only brand).",
+        "The browser tab favicon uses the generated icon asset(s).",
+        "The HTML document title is updated to a Dawateiqra Organization title (English)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Make the existing Internet Identity login flow more robust and retry-friendly: if login fails or gets stuck, provide clear user feedback in English and allow the user to retry login without needing a page refresh.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "Ji dubara try kijiye agar longing wale option nahi ho pa Raha to to use Google se login karne ka allow de dijgega."
+        ]
+      },
+      "acceptanceCriteria": [
+        "If Internet Identity login returns an error (loginStatus === 'loginError' with loginError present), the UI displays a clear error message in English and presents an obvious 'Try again' action.",
+        "If a previous login attempt left the app in a bad state (e.g., 'User is already authenticated' error), the retry flow clears the stored identity and retries login from the UI.",
+        "Login button labels remain English and do not break existing authenticated/un-authenticated states.",
+        "No new third-party authentication providers are added."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Backend must remain a single Motoko actor (backend/main.mo).",
+    "Use English for all user-facing UI text.",
+    "Google sign-in must not be implemented because only Internet Identity authentication is supported on this platform."
+  ],
+  "nonGoals": [
+    "Implementing Google OAuth / Google Sign-In authentication.",
+    "Implementing phone/email OTP or password authentication in this change (beyond improving the existing Internet Identity retry UX).",
+    "Building the full Dawateiqra Organization feature set (membership, donations, admin panel, content sections) as part of this specific change request."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": [
+      "Create a centered square app logo from the uploaded image (20251231_075037.png > dawateiqra-logo.dim_512x512.png)",
+      "Create a favicon-sized icon from the uploaded image (20251231_075037.png > favicon.dim_32x32.png)",
+      "Create a small navigation bar logo from the uploaded image (20251231_075037.png > nav-logo.dim_48x48.png)"
+    ]
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

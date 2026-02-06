@@ -1,2 +1,3 @@
-# initial-web-app-scaffold-home-navigation-and-saved-project-brief
-Exported from Caffeine project: Dawateiqra Organization Web App
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

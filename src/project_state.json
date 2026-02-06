@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Scope changed: replace the initial scaffold with a mobile-friendly “Dawateiqra Organization” web app featuring authentication, membership, donations, multiple content/help sections, and an admin panel; include Urdu support and low-bandwidth optimization.",
+  "architectural_notes": [
+    "App scope is being replaced with a Dawateiqra Organization web app (not extending the prior generic scaffold)."
+  ],
+  "known_issues": [
+    "Previous build attempt failed; request to retry with simplified approach (and fall back to Google login if needed)."
+  ],
+  "isFixRequest": true,
+  "imageRequirements": "## Edit Images\n- Create a centered square app logo from the uploaded image (20251231_075037.png > dawateiqra-logo.dim_512x512.png)\n- Create a favicon-sized icon from the uploaded image (20251231_075037.png > favicon.dim_32x32.png)\n- Create a small navigation bar logo from the uploaded image (20251231_075037.png > nav-logo.dim_48x48.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-web-app-shell-with-a-top-navigation-bar-and-routed-pages-including-at-minimum-home-and-help-about-pages-with-all-user-facing-text-in-english",
+      "title": "Create a responsive web app shell with a top navigation bar and routed pages, including at minimum: Home and Help/About pages, with all user-facing text in English.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-home-page-add-a-simple-project-brief-form-to-capture-the-user-s-intended-web-app-details-e-g-app-name-short-description-and-3-key-features-and-allow-saving-reloading-the-draft",
+      "title": "On the Home page, add a simple “Project Brief” form to capture the user’s intended web app details (e.g., app name, short description, and 3 key features) and allow saving + reloading the draft.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-backend-persistence-for-each-caller-s-project-brief-with-methods-to-create-update-and-fetch-the-caller-s-saved-brief-and-connect-the-frontend-form-to-use-backend-persistence-when-available-fall-back-to-local-draft-if-backend-call-fails",
+      "title": "Add backend persistence for each caller’s Project Brief with methods to create/update and fetch the caller’s saved brief, and connect the frontend form to use backend persistence when available (fall back to local draft if backend call fails).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-choose-and-apply-a-coherent-visual-theme-for-the-web-app-colors-typography-spacing-and-component-styling-and-use-it-consistently-across-pages-do-not-use-a-blue-purple-theme",
+      "title": "Choose and apply a coherent visual theme for the web app (colors, typography, spacing, and component styling) and use it consistently across pages. Do not use a blue/purple theme.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-provided-dawateiqra-organization-logo-to-the-app-as-a-static-asset-and-apply-it-to-the-app-branding-show-it-in-the-top-navigation-next-to-the-app-name-and-set-it-as-the-favicon-and-any-other-standard-web-app-icons-used-by-the-frontend-update-the-app-title-text-to-reflect-the-dawateiqra-organization-branding",
+      "title": "Add the provided Dawateiqra Organization logo to the app as a static asset and apply it to the app branding: show it in the top navigation next to the app name, and set it as the favicon (and any other standard web app icons used by the frontend). Update the app title text to reflect the Dawateiqra Organization branding.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-existing-internet-identity-login-flow-more-robust-and-retry-friendly-if-login-fails-or-gets-stuck-provide-clear-user-feedback-in-english-and-allow-the-user-to-retry-login-without-needing-a-page-refresh",
+      "title": "Make the existing Internet Identity login flow more robust and retry-friendly: if login fails or gets stuck, provide clear user feedback in English and allow the user to retry login without needing a page refresh.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a web app for the user (web-based application accessible via browser).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Replace existing app with “Dawateiqra Organization Web App” (education, welfare, dawah, legal help, community) with mobile-first clean UI.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "User authentication: register/login via mobile number or email; OTP or password-based login; if not possible, provide Google login option; include individual user profiles.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Organization membership system: online joining form, categories (Student, Volunteer, Donor, Member), admin approval workflow, and member data management.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Donations: monthly plans ₹30/₹100/₹500, online payment integration, user donation history, and admin donation reports.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Public sections/pages: About (intro/mission/vision/purpose/team departments), Help & Support (education/financial/legal + help request form), Education resources (Islamic + modern guidance, madrasas list, universities info), Free courses & PDF books, Islamic videos with YouTube integration, Join Teams (YouTube/media/social/volunteer registration).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Admin panel to manage users, approve members, track donations, upload/manage content, and handle help requests.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Non-functional requirements: Urdu content support, low internet usage optimization, and security hardening.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Branding: set the provided app logo in the web app (header/favicon/app identity as applicable).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Dawateiqra Organization Web App",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

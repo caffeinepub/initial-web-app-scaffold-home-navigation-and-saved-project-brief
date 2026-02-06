@@ -1,0 +1,16 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with Home and Help routes, wraps the app with ThemeProvider for dark mode support, and includes the Toaster for notifications.",
+  "frontend/src/components/AppShell.tsx": "Layout component that provides the app shell structure with persistent top navigation, main content area using Outlet for routed pages, and a footer with attribution.",
+  "frontend/src/components/TopNav.tsx": "Responsive navigation bar with Dawateiqra logo image and brand name, route links (Home/Help), authentication button, and mobile menu drawer.",
+  "frontend/src/components/AuthButton.tsx": "Authentication button component that handles Internet Identity login/logout with enhanced error state display using the isLoginError helper boolean, showing a clear error alert and prominent \"Try Again\" button when login fails.",
+  "frontend/src/components/ProjectBriefForm.tsx": "Comprehensive form component for creating and editing project briefs with validation, local storage persistence, and backend sync when authenticated.",
+  "frontend/src/components/ProfileSetupDialog.tsx": "Modal dialog that prompts authenticated users to enter their name on first login, preventing dismissal until profile is created.",
+  "frontend/src/pages/HomePage.tsx": "Home page that displays the project brief form, handles loading states, syncs backend data to local draft, and shows profile setup dialog for new users.",
+  "frontend/src/pages/HelpAboutPage.tsx": "Help and about page with comprehensive documentation on how to use the app, feature explanations, getting started guide, and tips for writing project briefs.",
+  "frontend/src/hooks/useProjectBriefDraft.ts": "Custom hook that manages local storage persistence for project brief drafts, handling serialization of BigInt values and providing save/clear operations.",
+  "frontend/src/hooks/useProjectBriefBackend.ts": "Custom hook that manages backend operations for project briefs using React Query, including fetching and saving with error/success state management.",
+  "frontend/src/hooks/useQueries.ts": "Custom hooks for user profile and role management, integrating with the authorization system to check authentication status and handle profile setup.",
+  "frontend/src/index.css": "Global styles with OKLCH color system using a warm amber/orange theme (avoiding blue/purple), with comprehensive tokens for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with custom colors mapped to CSS variables, Inter font family, custom shadows, and animation keyframes.",
+  "frontend/index.html": "HTML entry point with Dawateiqra Organization title and favicon/icon links pointing to generated logo assets."
+}
